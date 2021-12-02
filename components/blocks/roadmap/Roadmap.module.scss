@@ -1,0 +1,223 @@
+@import "../../../scss/main_settings.scss"; 
+
+.content_block {
+    padding: 2rem 0;
+    padding-top: 4rem;
+    @extend %flex_wrap, %block_style, %justify_content_center, %align_items_center;
+    @media screen and (min-width:0px) and (max-width:1024px) {
+        padding-top: 2rem;      
+    }  
+    .content {
+        width: 100%;
+        @extend %flex_nowrap, %justify_content_center, %align_items_end;
+        @media screen and (min-width:0px) and (max-width:1024px) {
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;           
+        }
+        .column {
+            &:nth-child(1) {
+                width: 40%;
+                @media screen and (min-width:0px) and (max-width:1024px) {
+                    width: 100%;   
+                }
+                .title_wrapper {
+                    display: block;
+                    padding-bottom: 2rem;
+                    .grid_wrapper {
+                        display: -ms-grid;
+                        display: grid;
+                        grid-auto-columns: -webkit-max-content;
+                        grid-auto-columns: max-content;
+                        grid-auto-rows: auto;
+                        grid-gap: 1rem;
+                        p {
+                            @extend %page_section;
+                            -ms-grid-column: 1;
+                            grid-column: 1;
+                            -ms-grid-row: 1;
+                            grid-row: 1;
+                        }
+                        h3 {
+                            @extend %page_section;
+                            -ms-grid-column: 2;
+                            grid-column: 2;
+                            -ms-grid-row: 2;
+                            grid-row: 2;
+                            padding-bottom: 3rem;
+                        }
+                    }
+                    h2 {
+                        @extend %block_title;
+                    }
+                }
+            }
+            &:nth-child(2) {
+                width: 60%;
+                @media screen and (min-width:0px) and (max-width:1024px) {
+                    width: 100%;   
+                }
+                .control_container {
+                    position: relative;
+                    @extend %flex_nowrap, %justify_content_center, %align_items_center;
+                    .roadmap_control {
+                        @extend %flex_nowrap, %justify_content_center, %align_items_center, %control_button;
+                        position: relative;
+                    }
+                    .left {
+                        margin-right: 1.5rem;
+                        &::before {
+                            content: '\f104';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            -webkit-transform: translate(-70%, -50%);
+                                -ms-transform: translate(-70%, -50%);
+                                    transform: translate(-70%, -50%);
+                        }
+                    }
+                    
+                    .right {
+                        margin-left: 1.5rem;
+                        &::before {
+                            content: '\f105';
+                            position: absolute;
+                            top: 50%;
+                            right: 50%;
+                            -webkit-transform: translate(60%, -50%);
+                                -ms-transform: translate(60%, -50%);
+                                    transform: translate(60%, -50%);
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-child(2) {
+            width: 100%;
+            display: block;
+            overflow-y: unset;
+            .roadmap {
+                @extend %flex_nowrap, %justify_content_center, %align_items_end;
+                color: $white;
+                padding-top: 3rem;
+                position: relative;
+                .obscurity {
+                    width: 33.3%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.411);
+                    position: absolute;
+                    z-index: 1000;
+                            backdrop-filter: blur(4px);
+                    -webkit-backdrop-filter: blur(4px);
+                    @media screen and (min-width:0px) and (max-width:1024px) {
+                        display: none;
+                    }
+                    &:nth-child(1) {
+                        left: 0;
+                    }
+                    &:nth-child(2) {
+                        right: 0;
+                    }
+                }
+                .roadmap_container {
+                    @extend %flex_nowrap, %justify_content_start, %align_items_end, %cursor_grab;
+                    position: relative;
+                    width: 100%;
+                    overflow-x: scroll;
+                    padding: 3rem 0;
+                    &::-webkit-scrollbar {
+                        -webkit-appearance: none;
+                        appearance: none;
+                    }
+                    &.grabbing {
+                        cursor: -webkit-grabbing;
+                        cursor: grabbing;
+                    }
+                    .roadmap_wrapper {
+                        @extend %flex_nowrap;
+                        .roadmap_elem {
+                            @extend %flex_nowrap, %justify_content_start, %align_items_start;
+                            width: 26.664vw;
+                            border-top: 0.15rem solid white;
+                            position: relative;
+                            -webkit-user-select: none;
+                            -moz-user-select: none;
+                                -ms-user-select: none;
+                                    user-select: none;
+                            @media screen and (min-width:0px) and (max-width:1024px) {
+                                width: 90vw;
+                            }
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                background-color: $black;
+                                border: 0.15rem solid $white;
+                                width: 1rem;
+                                height: 1rem;
+                                border-radius: 50%;
+                                top: -0.6rem;
+                                left: 0.35rem;
+                                z-index: 1;
+                            }
+                            &.ghost {
+                                &::before {
+                                    display: none;
+                                }
+                                @media screen and (min-width:0px) and (max-width:1024px) {
+                                    display: none;
+                                }
+                            }
+                            .roadmap_time {
+                                position: absolute;
+                                top: -3rem;
+                                left: 0.5rem;
+                                p {
+                                    color: $nzi;
+                                    font-size: 1.5rem;
+                                    font-weight: bold;
+                                }
+                            }
+                            .roadmap_content {
+                                width: 100%;
+                                height: 100%;
+                                padding-left: 2rem;
+                                padding-top: 0.5rem;
+                                @extend %flex_wrap, %justify_content_start;
+                                .roadmap_content_wrapper {
+                                    @extend %align_self_start;
+                                    padding-right: 1rem;
+                                    .roadmap_elem_title {
+                                        @extend %Anonymous_bold;
+                                        width: 100%;
+                                        text-align: left;   
+                                        font-size: 1.3rem;
+                                        padding-top: 2rem
+                                    }
+                                    .roadmap_elem_text {
+                                        @extend %Anonymous_normal;
+                                        width: 100%;
+                                        text-align: left;
+                                        line-height: 1.5rem;
+                                        font-size: 1.2rem;
+                                        padding-top: 1.5rem
+                                    }
+                                }
+                                .roadmap_img_wrapper {
+                                    @extend %align_self_end;
+                                    width: 100%;
+                                    margin-top: 0rem;
+                                    .roadmap_img {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                        
+                        .roadmap_elem.active {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

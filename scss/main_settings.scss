@@ -1,0 +1,265 @@
+$black: #000000;
+$nzi: #3783fe;
+$white: #ffffff;
+$gray: #858585;
+$red: rgb(252,68,120);
+$green: rgb(0,243,97);
+$blue: rgb(18,67,253);
+$pink: rgb(255,5,95);
+$violet: rgb(85,60,255);
+$orange: rgb(243,75,7);
+
+%flex_wrap{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+%flex_nowrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+}
+
+%desktop {
+    display: block;
+    @media screen and (min-width:0px) and (max-width:1024px) {
+        display: none;
+    }
+}
+
+%block_style {
+    width: 80%;
+    margin: auto;
+    padding: 3rem 0;
+    @media screen and (min-width:0px) and (max-width:1024px) {
+        width: 90%;               
+    }
+}
+
+%Montserrat_light {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: lighter;
+}
+
+%Montserrat_normal {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: normal;
+}
+
+%Montserrat_bold {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+}
+
+%Anonymous_normal {
+    font-family: "Anonymous";
+    font-style: normal;
+    font-weight: normal;
+}
+
+%Anonymous_bold {
+    font-family: "Anonymous";
+    font-style: normal;
+    font-weight: bold;
+}
+
+%cursor_grab {
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+%cursor_pointer {
+    cursor: pointer;
+}
+
+%desktop_flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    @media screen and (min-width:0px) and (max-width:1024px) {
+        display: none;
+    }
+}
+
+%mobile {
+    display: none;
+    @media screen and (min-width:0px) and (max-width:1024px) {
+        display: block;
+    }
+}
+
+%mobile_flex {
+    display: none;
+    @media screen and (min-width:0px) and (max-width:1024px) {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+
+%page_section {
+    font-family: "Anonymous";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: $gray;
+}
+
+%block_title {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3.5rem;
+    letter-spacing: 0.2rem;
+    color: $white;
+    @media screen and (min-width:0px) and (max-width:1024px) {
+        font-size: 2rem;
+        @media screen and (min-width:320px) and (max-width:359px) {
+            font-size: 1.5rem;
+        }              
+    }
+}
+
+%justify_content_center {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+%justify_content_space_between {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+%justify_content_start {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+
+%justify_content_end {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+}
+
+%align_items_center {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+%align_items_start {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+}
+
+%align_items_end {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+}
+
+%align_self_end {
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: flex-end;
+}
+
+%align_self_start {
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: flex-start;
+}
+
+%main_text {
+    letter-spacing: 0.15rem;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    color: $white;
+}
+
+%control_button {
+    font-family: 'Fontello';
+    width: 5.5rem;
+    height: 5.5rem;
+    background-color: transparent;
+    color: $gray;
+    font-size: 4rem;
+    -webkit-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    border: 1px solid $gray;
+    border-radius: 50%;
+    position: relative;
+    &:hover {
+        color: $white;
+        text-shadow: 2px 2px 1rem $white, -2px -2px 1rem $white;
+        border-color: $white;
+    }
+    @media screen and (min-width:0px) and (max-width:1024px) {
+        font-size: 2rem;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
+
+%page_title {
+    color: $white;
+    text-align: center;
+}
+
+%blure {
+            backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.8) 22%, rgba(0,0,0,0.5) 34%, rgba(0,0,0,0) 70%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.8) 22%,rgba(0,0,0,0.5) 34%,rgba(0,0,0,0) 70%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.8) 22%,rgba(0,0,0,0.5) 34%,rgba(0,0,0,0) 70%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+%middle_absolute {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+
+%box_shadow_red {
+    -webkit-box-shadow: 2px 2px 2rem $red, -2px -2px 2rem $red;
+            box-shadow: 2px 2px 2rem $red, -2px -2px 2rem $red;
+}
+%box_shadow_green {
+    -webkit-box-shadow: 2px 2px 2rem $green, -2px -2px 2rem $green;
+            box-shadow: 2px 2px 2rem $green, -2px -2px 2rem $green;
+}
+%box_shadow_blue {
+    -webkit-box-shadow: 2px 2px 2rem $blue, -2px -2px 2rem $blue;
+            box-shadow: 2px 2px 2rem $blue, -2px -2px 2rem $blue;
+}
+%box_shadow_pink {
+    -webkit-box-shadow: 2px 2px 2rem $pink, -2px -2px 2rem $pink;
+            box-shadow: 2px 2px 2rem $pink, -2px -2px 2rem $pink;
+}
+%box_shadow_violet {
+    -webkit-box-shadow: 2px 2px 2rem $violet, -2px -2px 2rem $violet;
+            box-shadow: 2px 2px 2rem $violet, -2px -2px 2rem $violet;
+}
+%box_shadow_orange {
+    -webkit-box-shadow: 2px 2px 2rem $orange, -2px -2px 2rem $orange;
+            box-shadow: 2px 2px 2rem $orange, -2px -2px 2rem $orange;
+}

@@ -1,0 +1,36 @@
+{
+    "title": "Roadmap",
+    "subtitle": "WHAT’S NEXT?",
+        
+    "alpha_title": "AR NFTs closed alpha",
+    "alpha_text": "Developing an AR NFTs app and testing in closed alpha-stage.",
+    "alpha_time": "Autumn 2021",
+
+    "ido_title": "Fundraising",
+    "ido_text": "IDO on different platforms.",
+    "ido_time": "September 20, 2021",
+
+    "listing_title": "Listing on Ape Finance and others",
+    "listing_text": "NZI is listed on Ape Finance and other exchanges.",
+    "listing_time": "Autumn 2021",
+
+    "closed_beta_title": "AR NFTs closed beta",
+    "closed_beta_text": "Testing of the AR NFTs app with early backers only.",
+    "closed_beta_time": "Autumn 2021",
+
+    "open_beta_title": "AR NFTs open beta",
+    "open_beta_text": "The AR NFTs app is available for everyone.",
+    "open_beta_time": "Winter 2021",
+
+    "release_title": "AR NFTs release",
+    "release_text": "The AR NFTs app is released in 1.0 version.",
+    "release_time": "Q1 2022",
+
+    "nnb_testnet_title": "Nuzai Network Blockchain (Testnet)",
+    "nnb_testnet_text": "Own Blockchain development and its testing.",
+    "nnb_testnet_time": "Q3 2022",
+
+    "nnb_mainnet_title": "Nuzai Network Blockchain (Mainnet)",
+    "nnb_mainnet_text": "Own Blockchain is released.",
+    "nnb_mainnet_time": "Q4 2022"
+}

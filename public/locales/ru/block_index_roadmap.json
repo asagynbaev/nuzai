@@ -1,0 +1,36 @@
+{
+    "title": "Дорожная карта",
+    "subtitle": "А ДАЛЬШЕ БОЛЬШЕ",
+
+    "alpha_title": "AR NFTs закрытый альфа-тест",
+    "alpha_text": "Разработка приложения AR NFTs и его закрытое тестирование (альфа версия)",
+    "alpha_time": "Осень 2021",
+
+    "ido_title": "Сбор средств",
+    "ido_text": "IDO на нескольких площадках.",
+    "ido_time": "20 Сентября 2021",
+
+    "listing_title": "Листинг на Ape Finance и других биржах",
+    "listing_text": "NZI токен продается на Ape Finance и других биржах",
+    "listing_time": "Осень 2021",
+
+    "closed_beta_title": "Закрытая бета AR NFTs",
+    "closed_beta_text": "Закрытое бета тестирование AR NFTs среди инвесторов.",
+    "closed_beta_time": "Осень 2021",
+
+    "open_beta_title": "Открытая бета AR NFTs",
+    "open_beta_text": "Открытое бета тестирование AR NFTs среди всех владельцев Nuzai NFT.",
+    "open_beta_time": "Зима 2021",
+
+    "release_title": "Релиз AR NFTs",
+    "release_text": "Релиз приложения AR NFTs с версией 1.0.",
+    "release_time": "Q1 2022",
+
+    "nnb_testnet_title": "Nuzai Network Blockchain (Testnet)",
+    "nnb_testnet_text": "Разработка и тестирование собственного блокчейна.",
+    "nnb_testnet_time": "Q3 2022",
+
+    "nnb_mainnet_title": "Nuzai Network Blockchain (Mainnet)",
+    "nnb_mainnet_text": "Релиз собственного блокчейна.",
+    "nnb_mainnet_time": "Q4 2022"
+}

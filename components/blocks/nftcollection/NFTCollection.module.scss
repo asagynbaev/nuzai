@@ -1,0 +1,204 @@
+@import "../../../scss/main_settings.scss";
+
+.content_block {
+    padding: 2rem 0;
+    padding-top: 4rem;
+    @extend %flex_wrap, %block_style, %justify_content_center, %align_items_center;
+    background-color: $black;
+    @media screen and (min-width:0px) and (max-width:1024px) {
+        padding-top: 2rem;      
+    }  
+    .top_title {
+        @extend %flex_wrap, %justify_content_center, %align_items_center;
+        .delimiter {
+            width: 15%;
+            height: 0.5rem;
+            background-color: $nzi;
+            @media screen and (min-width:0px) and (max-width:1024px) {
+                width: 50%;    
+            }  
+        }
+        h2 {
+            @extend %block_title;
+            width: 100%;
+            text-align: center;
+            padding-top: 3rem;
+            @media screen and (min-width:0px) and (max-width:1024px) {
+                padding-top: 2rem;      
+            }  
+        }
+        h3 {
+            width: 100%;
+            font-family: "Montserrat";
+            font-weight: normal;
+            color: $white;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+    .content {
+        width: 100%;
+        @extend %flex_nowrap;
+        padding-top: 3rem;
+        @media screen and (min-width:0px) and (max-width:1024px) {
+            flex-wrap: wrap;
+        }
+        .container {
+            &:nth-child(1) {
+                width: 40%;
+                @extend %flex_nowrap, %justify_content_center, %align_items_center;
+                @media screen and (min-width:0px) and (max-width:1024px) {
+                    width: 100%;
+                    height: 30rem;
+                }
+                .card_container {
+                    width: 100%;
+                    height: 100%;
+                    @extend %flex_nowrap, %justify_content_center, %align_items_center;
+                    .card {
+                        width: 20rem;
+                        position: relative;
+                        -webkit-transition: 0.6s;
+                        -o-transition: 0.6s;
+                        transition: 0.6s;
+                        -webkit-transform-style: preserve-3d;
+                                transform-style: preserve-3d;
+                        height: 100%;
+                        z-index: 1;
+                        -webkit-transform: rotateY(0deg);
+                        transform: rotateY(0deg);
+                        // &:hover {
+                        //     transform: rotateY(180deg);
+                        // }
+                        .side1 {
+                            z-index: 2;
+                        }
+                        .side2 {
+                            -webkit-transform: rotateY(180deg);
+                            transform: rotateY(180deg);
+                            z-index: 1;
+                        }
+                        .side1, .side2 {
+                            position: absolute;
+                            -webkit-backface-visibility: hidden;
+                                    backface-visibility: hidden;
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-box-pack: center;
+                                -ms-flex-pack: center;
+                                    justify-content: center;
+                            -webkit-box-align: center;
+                                -ms-flex-align: center;
+                                    align-items: center;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                        &.active {
+                            -webkit-transform: rotateY(180deg);
+                            transform: rotateY(180deg);
+                            z-index: 1; 
+                        }
+                    }
+                }
+            }
+            &:nth-child(2) {
+                width: 60%;   
+                @media screen and (min-width:0px) and (max-width:1024px) {
+                    width: 100%;
+                }
+                .nft_wrapper {
+                    p {
+                        @extend %main_text;
+                    }
+                    .nft_preview {
+                        padding: 2rem 0;
+                        display: -ms-grid;
+                        display: grid;
+                        -ms-grid-columns: -webkit-max-content 3rem -webkit-max-content 3rem -webkit-max-content 3rem -webkit-max-content;
+                        -ms-grid-columns: max-content 3rem max-content 3rem max-content 3rem max-content;
+                        grid-template-columns: repeat(4, -webkit-max-content);
+                        grid-template-columns: repeat(4, max-content);
+                        grid-gap: 3rem;
+                        @media screen and (min-width:0px) and (max-width:1024px) {
+                            -ms-grid-columns: calc(33.3% - 1rem) 1rem calc(33.3% - 1rem) 1rem calc(33.3% - 1rem);
+                            grid-template-columns: repeat(3, calc(33.3% - 1rem));
+                            grid-gap: 1rem;
+                        }
+                        .nft_preview_item {
+                            width: 10rem;
+                            cursor: pointer;
+                            opacity: 0.7;
+                            @media screen and (min-width:0px) and (max-width:1024px) {
+                                width: 100%;
+                            }
+                            img {
+                                width: 100%;
+                            }
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                        .nft_preview_item.active {
+                            opacity: 1;
+                        }
+                    }
+                    .nft_details {
+                        @extend %main_text;
+                        display: -ms-grid;
+                        display: grid;
+                        -ms-grid-columns: -webkit-max-content 2rem -webkit-max-content;
+                        -ms-grid-columns: max-content 2rem max-content;
+                        grid-template-columns: repeat(2, -webkit-max-content);
+                        grid-template-columns: repeat(2, max-content);
+                        grid-row-gap: 1rem;
+                        grid-column-gap: 2rem;
+                        .details_item {
+                            .details_title {
+
+                            }
+                            .details {
+
+                            }
+                            a {
+                                color: $nzi;
+                                &:hover {
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                    .button_wrapper {
+                        padding: 2rem 0;
+                        .buy_button {
+                            @extend %flex_nowrap, %justify_content_center, %align_items_center;
+                            width: 10rem;
+                            height: 3rem;
+                            font-size: 1.2rem;
+                            background-color: $nzi;
+                            color: $white;
+                            border-radius: 0.5rem;
+                            &:hover {
+                                background-color: $white;
+                                color: $nzi;
+                            }
+                            @media screen and (min-width:0px) and (max-width:1024px) {
+                                margin: auto;
+                            }
+                            &.disabled {
+                                background-color: $gray;
+                                cursor: default;
+                                pointer-events: none;
+                                &:hover {
+                                    background-color: $gray;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

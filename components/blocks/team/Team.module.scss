@@ -1,0 +1,148 @@
+@import "../../../scss/main_settings.scss";
+
+.content_block {
+    padding: 2rem 0;
+    padding-top: 4rem;
+    @extend %flex_wrap, %block_style, %justify_content_start, %align_items_center;
+    @media screen and (min-width:0px) and (max-width:1024px) {
+        padding-top: 2rem;      
+    }  
+    .title_wrapper {
+        display: block;
+        padding-bottom: 2rem;
+        width: 40%;
+        @media screen and (min-width:320px) and (max-width:359px) {
+            width: 100%;
+        } 
+        .grid_wrapper {
+            display: -ms-grid;
+            display: grid;
+            grid-auto-columns: -webkit-max-content;
+            grid-auto-columns: max-content;
+            grid-auto-rows: auto;
+            grid-gap: 1rem;
+            p {
+                @extend %page_section;
+                -ms-grid-column: 1;
+                grid-column: 1;
+                -ms-grid-row: 1;
+                grid-row: 1;
+            }
+            h3 {
+                @extend %page_section;
+                -ms-grid-column: 2;
+                grid-column: 2;
+                -ms-grid-row: 2;
+                grid-row: 2;
+                padding-bottom: 3rem;
+            }
+        }
+        h2 {
+            @extend %block_title;
+        }
+    }
+    .content {
+        @extend %cursor_grab;
+        width: 100%;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+        &.grabbing {
+            cursor: -webkit-grabbing;
+            cursor: grabbing;
+        }
+        .team_container {
+            width: 100%;
+            overflow-x: scroll;
+            &::-webkit-scrollbar {
+                display: none;
+                // -webkit-appearance: none;
+                //         appearance: none;
+            }
+            .cards_wrapper {
+                @extend %flex_nowrap;
+                width: max-content;
+                .team_card {
+                    width: 20vw;
+                    margin: 0 1rem;
+                    @media screen and (min-width:0px) and (max-width:1024px) {
+                        width: 40vw;
+                    }
+                    .team_photo_container {
+                        width: 100%;
+                        img {
+                            width: 100%;
+                            border-radius: 1rem;
+                        }
+                    }
+                }
+                .team_info {
+                    padding: 1rem;
+                    width: calc(100% - 2rem);
+                    .name {
+                        color: $white;
+                        font-size: 1.3rem;
+                    }
+                    .prof {
+                        color: $gray;
+                        font-size: 1.2rem;;
+                        padding-bottom: 1rem;
+                    }
+                    .team_social_wrapper {
+                        padding: 0.4rem 0;
+                        @extend %flex_nowrap, %justify_content_start, %align_items_center;
+                        .team_social_elem {
+                            font-size: 1.3rem;
+                            margin: 0 0.5rem;
+                            &:nth-child(1) {
+                                margin-left: 0;
+                            }
+                            .team_link {
+                                font-family: "Fontello";
+                                color: $white;
+                                padding: 1rem 0;
+                                &.twitter {
+                                    &::before {
+                                        content: '\f099';
+                                    }
+                                }
+                                &.linkedin {
+                                    &::before {
+                                        content: '\f0e1';
+                                    }
+                                }
+                                &:hover {
+                                    text-shadow: 2px 2px 1rem $white, -2px -2px 1rem $white;
+                                }
+                            }
+                        }
+                    }
+                } 
+            }
+        }
+        .scrollbar_wrapper {
+            width: 80%;
+            margin: auto;
+            position: relative;
+            @media screen and (min-width:0px) and (max-width:1024px) {
+                display: none;
+            }
+            .scrollbar {
+                width: 100%;
+                height: 0.2rem;
+                background-color: $gray;
+            }
+            .scrollbar_thumb {
+                width: 20%;
+                background-color: $white;
+                height: 0.4rem;
+                position: absolute;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                        transform: translateY(-50%);
+            }
+        }
+    }
+}

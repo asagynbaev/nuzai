@@ -1,0 +1,206 @@
+@import "../../scss/main_settings.scss"; 
+
+.container {
+    padding: 3rem 0;
+    width: 80%;
+    margin: auto;
+    border-top: 0.3rem solid $white;
+    @media screen and (min-width:0px) and (max-width:1024px) {
+        width: 90%;               
+    }
+    .content {
+        @extend %flex_wrap, %justify_content_center, %align_items_start;
+        width: 100%;
+        padding: 0;
+        margin: auto;
+        @media screen and (min-width:0px) and (max-width:1024px) {
+            width: 100%;
+            padding: 0;           
+        }
+        .column {
+            &:nth-child(1) {
+                width: 50%;
+                @media screen and (min-width:0px) and (max-width:1024px) {
+                    width: 100%;   
+                }
+                .logo_wrapper {
+                    padding-bottom: 2rem;
+                    .logo {
+                        font-family: 'Fontello';
+                        display: block;
+                        font-size: 5rem;
+                        color: $white;
+                        padding: 0.5rem 0;
+                        @media screen and (min-width:0px) and (max-width:1024px) {
+                            text-align: center;
+                        }
+                        &::before {
+                            content: '\e80a';
+                        }
+                    }
+                }
+                .menu_list {
+                    display: -ms-grid;
+                    display: grid;
+                    -ms-grid-columns: (50%)[2];
+                    grid-template-columns: repeat(2, 50%);
+                    font-size: 1.2rem;
+                    row-gap: 1rem;
+                    @media screen and (min-width:0px) and (max-width:1024px) {
+                        -ms-grid-columns: (100%)[1];
+                        grid-template-columns: repeat(1, 100%);
+                        justify-items: center;
+                        padding-bottom: 2rem;
+                    }
+                    .menu_item {
+                        @media screen and (min-width:0px) and (max-width:1024px) {
+                            width: -webkit-max-content;
+                            width: -moz-max-content;
+                            width: max-content;
+                        }
+                        .menu_link {
+                            color: $gray;
+                            &:hover {
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+            &:nth-child(2) {
+                width: 50%;
+                @media screen and (min-width:0px) and (max-width:1024px) {
+                    width: 100%;   
+                }
+                .social_menu {
+                    font-size: 2rem;
+                    display: -ms-grid;
+                    display: grid;
+                    -ms-grid-columns: (100%)[1];
+                    grid-template-columns: repeat(1, 100%);
+                    row-gap: 1.5rem;
+                    justify-items: flex-end;
+                    @media screen and (min-width:0px) and (max-width:1024px) {
+                        justify-items: center;
+                        -ms-grid-columns: (33%)[3];
+                        grid-template-columns: repeat(3, 33%);
+                        -ms-grid-rows: (auto)[2];
+                        grid-template-rows: repeat(2, auto);
+                        &:nth-child(1) {
+                            -ms-grid-row: 1;
+                            -ms-grid-column: 1;
+                         }
+                         &:nth-child(2) {
+                            -ms-grid-row: 1;
+                            -ms-grid-column: 2;
+                         }
+                         &:nth-child(3) {
+                            -ms-grid-row: 1;
+                            -ms-grid-column: 3;
+                         }
+                         &:nth-child(4) {
+                            -ms-grid-row: 2;
+                            -ms-grid-column: 1;
+                         }
+                         &:nth-child(5) {
+                            -ms-grid-row: 2;
+                            -ms-grid-column: 2;
+                         }
+                         &:nth-child(6) {
+                            -ms-grid-row: 2;
+                            -ms-grid-column: 3;
+                         }
+                    }
+                    .social_links_elem {
+                        @extend %flex_nowrap, %justify_content_end, %align_items_center;
+                        @media screen and (min-width:0px) and (max-width:1024px) {
+                            &:nth-child(1) {
+                                -ms-grid-column: 1;
+                                    grid-column-start: 1;
+                                -ms-grid-column-span: 3;
+                                grid-column-end: 4;
+                                -ms-grid-row: 1;
+                                    grid-row-start: 1;
+                                -ms-grid-row-span: 0;
+                                grid-row-end: 1;
+                            }
+                            &:nth-child(2) {
+                                -ms-grid-column: 1;
+                                    grid-column-start: 1;
+                                -ms-grid-column-span: 1;
+                                grid-column-end: 2;
+                                -ms-grid-row: 2;
+                                    grid-row-start: 2;
+                                -ms-grid-row-span: 0;
+                                grid-row-end: 2;
+                            }
+                            &:nth-child(3) {
+                                -ms-grid-column: 2;
+                                    grid-column-start: 2;
+                                -ms-grid-column-span: 1;
+                                grid-column-end: 3;
+                                -ms-grid-row: 2;
+                                    grid-row-start: 2;
+                                -ms-grid-row-span: 0;
+                                grid-row-end: 2;
+                            }
+                            &:nth-child(4) {
+                                -ms-grid-column: 3;
+                                    grid-column-start: 3;
+                                -ms-grid-column-span: 1;
+                                grid-column-end: 4;
+                                -ms-grid-row: 2;
+                                    grid-row-start: 2;
+                                -ms-grid-row-span: 0;
+                                grid-row-end: 2;
+                            }
+                        }
+                        .social_link {
+                            font-family: "Fontello";
+                            color: $gray;
+                            font-size: 3rem;
+                            &:hover {
+                                color: $white;
+                            }
+                            &.mail {
+                                @extend %Anonymous_normal;
+                                font-size: 1.2rem;
+                            }
+                            &.telegram {
+                                &::before {
+                                    content: '\e806';
+                                }
+                            }
+                            &.twitter {
+                                &::before {
+                                    content: '\f099';
+                                }
+                            }
+                            &.instagram {
+                                &::before {
+                                    content: '\f16d';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .row {
+            width: 100%;
+            @extend %flex_wrap, %justify_content_center, %align_items_center;
+            padding-top: 3rem;
+            .copyright {
+                color: $gray;
+                font-size: 1rem;
+                text-align: center;
+                a {
+                    color: $gray;
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

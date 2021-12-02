@@ -1,0 +1,57 @@
+@import "../../../scss/main_settings.scss";
+
+.content_block {
+    padding: 2rem 0;
+    padding-top: 4rem;
+    @extend %flex_wrap, %block_style, %justify_content_center, %align_items_center;
+    background-color: $black;
+    position: relative;
+    @media screen and (min-width:0px) and (max-width:1024px) {
+        padding-top: 2rem;      
+    }  
+    .top_title {
+        @extend %flex_wrap, %justify_content_center, %align_items_center;
+        .delimiter {
+            width: 15%;
+            height: 0.5rem;
+            background-color: $nzi;
+            @media screen and (min-width:0px) and (max-width:1024px) {
+                width: 50%;    
+            }  
+        }
+        h2 {
+            @extend %block_title;
+            width: 100%;
+            text-align: center;
+            padding-top: 3rem;
+            @media screen and (min-width:0px) and (max-width:1024px) {
+                padding-top: 2rem;      
+            }  
+        }
+        h3 {
+            width: 100%;
+            font-family: "Montserrat";
+            font-weight: normal;
+            color: $white;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+
+    .content {
+        width: 100%;
+        @extend %flex_wrap;
+        padding-top: 3rem;
+        
+        p {
+            @extend %main_text;
+            padding: 1rem 0;
+            &:nth-child(1) {
+                padding-top: 0;
+            }
+            &:nth-child(3) {
+                padding-bottom: 4rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,150 @@
+@import "main_settings.scss";
+
+*{
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @extend %Montserrat_normal;
+    background-color: $black;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+*::before {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+*::after {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+*:active {
+    outline: none;
+}
+
+*:hover {
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+li {
+    display: list-item;
+    list-style-type: none;
+    position: relative;
+}
+
+ul {
+    position: relative;
+}
+
+main {
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    margin: auto;
+    z-index: 1001;
+    background-color: $black;
+    @media screen and (min-width:0px) and (max-width:1024px) {
+        
+    } 
+}
+
+.canvasjs-chart-tooltip {
+    opacity: 0;
+}
+
+.canvasjs-chart-credit {
+    display: none !important;
+}
+
+footer {
+    width: 100%;
+}
+
+/* fonts */
+
+@font-face {
+    font-family: "FuturaCondensed";
+    src: url("/fonts/FuturaCondensed/FuturaCondensedBQ-ExtraBoldOblique.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Fontello";
+    src: url("/fonts/Fontello/fontello.ttf") format("truetype"),
+    url("/fonts/Fontello/fontello.eot"),
+    url("/fonts/Fontello/fontello.svg"),
+    url("/fonts/Fontello/fontello.woff"),
+    url("/fonts/Fontello/fontello.woff2"); 
+    font-style: normal; 
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Monserrat/Montserrat-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat/Montserrat-Light.ttf") format("truetype");
+    font-style: normal;
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat/Montserrat-SemiBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Anonymous";
+    src: url("/fonts/Anonymous/Anonymous_Pro.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Anonymous";
+    src: url("/fonts/Anonymous/Anonymous_Pro_B.ttf") format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}

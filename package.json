@@ -1,0 +1,50 @@
+{
+  "name": "nuzai",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "build": "next build",
+    "nm": "nodemon server.js",
+    "dev": "npm run nm --do_log --dev",
+    "prod": "node server.js",
+    "update-prod": "git pull && npm run build && npm run prod"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "server.js",
+      "package.json",
+      ".env.local"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^3.5.1",
+    "classnames": "^2.3.1",
+    "express": "^4.17.1",
+    "express-force-ssl": "^0.3.2",
+    "mongodb": "^4.1.0",
+    "next": "^11.1.0",
+    "next-i18next": "^8.6.0",
+    "nodemon": "^2.0.12",
+    "react": "^17.0.2",
+    "react-chartjs-2": "^3.0.4",
+    "react-dom": "^17.0.2",
+    "sass": "^1.39.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-proposal-decorators": "^7.13.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Best-Web-BW/Nuzai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Best-Web-BW/Nuzai/issues"
+  },
+  "homepage": "https://github.com/Best-Web-BW/Nuzai#readme",
+  "description": ""
+}

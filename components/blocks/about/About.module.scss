@@ -1,0 +1,66 @@
+@import "../../../scss/main_settings.scss";
+
+.content_block {
+    padding: 2rem 0;
+    padding-top: 4rem;
+    @extend %flex_nowrap, %block_style, %justify_content_center, %align_items_center;
+    position: relative;
+    @media screen and (min-width:0px) and (max-width:1024px) {
+        flex-wrap: wrap;        
+        padding-top: 2rem;          
+    }
+    .content_container {
+        @extend %flex_nowrap; 
+
+        @media screen and (min-width:0px) and (max-width:1024px) {
+            flex-wrap: wrap;           
+        }
+        &:nth-child(1) {
+            width: 30%;
+            @extend %justify_content_start;
+            
+            @media screen and (min-width:0px) and (max-width:1024px) {
+                width: 100%;       
+            }
+            .title_wrapper {
+                display: block;
+                padding-bottom: 2rem;
+                .grid_wrapper {
+                    display: grid;
+                    grid-auto-columns: max-content;
+                    grid-auto-rows: auto;
+                    grid-gap: 1rem;
+                    p {
+                        @extend %page_section;
+                        grid-column: 1;
+                        grid-row: 1;
+                    }
+                    h3 {
+                        @extend %page_section;
+                        grid-column: 2;
+                        grid-row: 2;
+                        padding-bottom: 3rem;
+                    }
+                }
+                h2 {
+                    @extend %block_title;
+                }
+            }
+        }
+        &:nth-child(2) {
+            width: 70%;
+            @extend %flex_wrap;
+            overflow: hidden;
+            @media screen and (min-width:0px) and (max-width:1024px) {
+                width: 100%;    
+            }   
+            p {
+                @extend %main_text;
+                width: 100%;
+                &:nth-child(1), &:nth-child(2) {
+                    padding-bottom: 2rem;
+                }
+            }
+        }
+    }
+}
