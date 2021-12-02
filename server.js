@@ -13,8 +13,7 @@ const dev = process.env.NODE_ENV !== "production";
 const nextjs = next({ dev });
 const nextHandler = nextjs.getRequestHandler();
 
-const HTTPS_PORT = 5001;
-const HTTP_PORT = 5000;
+const HTTP_PORT = process.env.PORT || 8080;
 
 async function tryer(name, middleware, req, res, next) {
     try { await middleware(req, res, next) }
@@ -62,10 +61,10 @@ async function handleImage(req, res, next) {
     try {
         await nextjs.prepare();
 
-        https.createServer({
-            cert: fs.readFileSync("SSL/cert.pem"),
-            key: fs.readFileSync("SSL/key.pem")
-        }, express).listen(HTTPS_PORT);
+        // https.createServer({
+        //     cert: fs.readFileSync("SSL/cert.pem"),
+        //     key: fs.readFileSync("SSL/key.pem")
+        // }, express).listen(HTTPS_PORT);
         http.createServer(express).listen(HTTP_PORT);
         
         express.use(async (...args) => await tryer("forceSSL", forceSSL, ...args));
@@ -78,7 +77,6 @@ async function handleImage(req, res, next) {
         console.log(`--> Process environment: '${process.env.NODE_ENV}'`);
         console.log(`--> Is app in development mode: ${dev}`);
         console.log(`-> Ready on port ${HTTP_PORT} for HTTP`);
-        console.log(`-> Ready on port ${HTTPS_PORT} for HTTPS`);
 	} catch(e) {
 		console.error(e.stack);
 		process.exit(1);
