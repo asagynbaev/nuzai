@@ -8,6 +8,7 @@ const fs = require("fs");
 
 process.env.DO_LOG = Boolean(process.env.npm_config_do_log);
 process.env.NODE_ENV = process.env.npm_config_dev ? "development" : "production";
+const sslRedirect = require('heroku-ssl-redirect');
 
 const dev = process.env.NODE_ENV !== "production";
 const nextjs = next({ dev });
@@ -66,6 +67,7 @@ async function handleImage(req, res, next) {
         //     key: fs.readFileSync("SSL/key.pem")
         // }, express).listen(HTTPS_PORT);
         http.createServer(express).listen(HTTP_PORT);
+        express.use(sslRedirect());
         
         express.use(async (...args) => await tryer("forceSSL", forceSSL, ...args));
         
