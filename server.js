@@ -14,7 +14,7 @@ const nextjs = next({ dev });
 const nextHandler = nextjs.getRequestHandler();
 
 // const HTTPS_PORT = process.env.HTTPS_PORT || 3001;
-const HTTP_PORT = 3000;
+const HTTP_PORT = 8080;
 
 async function tryer(name, middleware, req, res, next) {
     try { await middleware(req, res, next) }
