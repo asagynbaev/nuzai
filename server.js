@@ -13,8 +13,8 @@ const dev = process.env.NODE_ENV !== "production";
 const nextjs = next({ dev });
 const nextHandler = nextjs.getRequestHandler();
 
-const HTTPS_PORT = process.env.HTTPS_PORT || 3001;
-const HTTP_PORT = process.env.HTTP_PORT || 3000;
+const HTTPS_PORT = 5001;
+const HTTP_PORT = 5000;
 
 async function tryer(name, middleware, req, res, next) {
     try { await middleware(req, res, next) }
