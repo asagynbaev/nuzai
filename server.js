@@ -13,8 +13,8 @@ const dev = process.env.NODE_ENV !== "production";
 const nextjs = next({ dev });
 const nextHandler = nextjs.getRequestHandler();
 
-const HTTPS_PORT = process.env.HTTPS_PORT || 443;
-const HTTP_PORT = process.env.HTTP_PORT || 80;
+// const HTTPS_PORT = process.env.HTTPS_PORT || 3001;
+const HTTP_PORT = process.env.HTTP_PORT || 3000;
 
 async function tryer(name, middleware, req, res, next) {
     try { await middleware(req, res, next) }
@@ -62,10 +62,10 @@ async function handleImage(req, res, next) {
     try {
         await nextjs.prepare();
 
-        https.createServer({
-            cert: fs.readFileSync("SSL/cert.pem"),
-            key: fs.readFileSync("SSL/key.pem")
-        }, express).listen(HTTPS_PORT);
+        // https.createServer({
+        //     cert: fs.readFileSync("SSL/cert.pem"),
+        //     key: fs.readFileSync("SSL/key.pem")
+        // }, express).listen(HTTPS_PORT);
         http.createServer(express).listen(HTTP_PORT);
         
         express.use(async (...args) => await tryer("forceSSL", forceSSL, ...args));
