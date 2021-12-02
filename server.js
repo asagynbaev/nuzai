@@ -78,7 +78,7 @@ async function handleImage(req, res, next) {
         console.log(`--> Process environment: '${process.env.NODE_ENV}'`);
         console.log(`--> Is app in development mode: ${dev}`);
         console.log(`-> Ready on port ${HTTP_PORT} for HTTP`);
-        console.log(`-> Ready on port ${HTTPS_PORT} for HTTPS`);
+        // console.log(`-> Ready on port ${HTTPS_PORT} for HTTPS`);
 	} catch(e) {
 		console.error(e.stack);
 		process.exit(1);
